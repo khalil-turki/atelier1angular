@@ -1,0 +1,80 @@
+<div class="col mb-3">
+    <div class="col-md-12 mb-3 mt-3">
+      <button (click)="fileInput.click()" style="background-color: transparent; border: none;">
+        <!--<img [src]="imgUrl" class="rounded-circle" width="200px" height="200px" /> -->
+        <img src="assets/contact.png" class="rounded-circle" width="100px" height="100px" />
+        
+        <!-- <input hidden type="file" #fileInput (change)="onFileInput(fileInput.files)"> -->
+        <input hidden type="file" #fileInput (change)="(fileInput.files)">
+      </button>
+    </div>
+    <hr>
+    <div class="col-md-12">
+      <div class="col-md-12 mb-3">
+        <h2><i class="fas fa-info-circle blue-color"></i>&nbsp;add produit</h2>
+      </div>
+      <div class="col-md-12">
+        <!--  <div class="alert alert-danger" *ngIf="errorMsg.length > 0"> -->
+        <div class="alert alert-danger">
+          <!--  <div *ngFor="let msg of errorMsg"> -->
+            <div *ngFor="let msg of ">
+            <span >{{msg}}</span>
+          </div>
+        </div>
+        <form>
+          <div class="row mb-3">
+            <div class="col">
+             <!-- <input type="text" class="form-control" name="codearticle" placeholder="Code article" [(ngModel)]="articleDto.codeArticle"> -->
+              <input type="text" class="form-control" name="idProduit" placeholder="idProduit">
+
+            </div>
+            <div class="col">
+            <!--  <input type="text" class="form-control" name="designation" placeholder="Designation"  [(ngModel)]="articleDto.designation"> -->
+              <input type="text" class="form-control" name="code" placeholder="code" >
+
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+
+            <!--  <input type="text" class="form-control" name="prixunitht" placeholder="Prix unitaire HT"
+                     (input)="calculerTTC()"
+                     [(ngModel)]="articleDto.prixUnitaireHt"> -->
+              <input type="text" class="form-control" name="libelle" placeholder="libelle">
+
+            </div>
+            <div class="col">
+
+              <!--<input type="text" class="form-control" name="tauxtva" placeholder="Taux TVA"
+                     (input)="calculerTTC()"
+                     [(ngModel)]="articleDto.tauxTva"> -->
+                  <input type="text" class="form-control" name="prix" placeholder="prix"
+                     >
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+        <!--  <input type="text" class="form-control" name="prixunitttc" placeholder="Prix unitaire TTC"  [(ngModel)]="articleDto.prixUnitaireTtc"> -->
+              <input type="text" class="form-control" name="TVA" placeholder="TVA">
+
+            </div>
+            
+        
+     
+    <div class="col-md-12 text-right">
+  <!--<button class="btn btn-danger mr-3" (click)="cancel()"> -->
+      <button class="btn btn-danger mr-3"(click)="list()">
+
+        <i class="fas fa-ban"></i>&nbsp;
+        Annuler
+      </button>
+    <!--<button class="btn btn-primary" (click)="enregistrerArticle()"> -->
+        <button class="btn btn-primary" (click)="list()">
+
+        <i class="fas fa-save"></i>&nbsp;
+        Ajouter
+      </button>
+    </div>
+  
+  </div>
+  

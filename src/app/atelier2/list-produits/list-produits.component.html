@@ -1,0 +1,45 @@
+<div class ="container">
+    <div class ="row">
+       <div class ="search-hero"></div>
+       <input type="text" name="search" [(ngModel)]="searchText" placeholder="search">
+       </div>
+
+       
+         
+ <div *ngFor="let p of listProduits | filter:searchText let j = index" > 
+    Produit : 
+       
+    <div>  <input type="submit" value="Detail" (click)="showDetail(j)"></div>
+    
+        <div *ngIf="index == j">
+          
+            <div [ngStyle]="{'backgroundColor':msg.prixUnitaire<=50?'blue':''}">
+               <div [ngStyle]="{'font-weight':getColor(msg.prixUnitaire)}"> 
+                 <div [ngStyle]="{'font-size':msg.prixUnitaire<=50?'20px':''}">
+        {{msg.idProduit}}
+        {{msg.code}}
+        {{msg.libelle}}
+        {{msg.prixUnitaire}}
+        {{msg.tauxTVA}}
+                  </div>
+               </div>
+            </div>
+
+        <div >
+
+    </div>
+            
+    
+        <input type="submit" value="Ajuster TVA" *ngIf="msg.tauxTVA>=0.2"  (click)="TVA(j)"  > </div> <hr>
+
+ </div>
+ <div class="col-md-12 text-right">
+    <!--<button class="btn btn-danger mr-3" (click)="cancel()"> -->
+        
+      <!--<button class="btn btn-primary" (click)="enregistrerArticle()"> -->
+          <button class="btn btn-primary" (click)="add()">
+  
+          <i class="fas fa-save"></i>&nbsp;
+          Ajouter un produit
+        </button>
+      </div>
